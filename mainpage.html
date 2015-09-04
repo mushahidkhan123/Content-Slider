@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<meta name="view port" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">	
+
+
+	<title>Up Coming Movies</title>
+
+<script>
+$(document).ready(function(){	
+	 	$('.arrowsAndImages').hide();
+ 
+		$('.showPics').click(function(){
+			var buttomMessage = $('.buttonText').text();
+ 
+	  		$('.arrowsAndImages').slideToggle('slow');
+	   		
+	   		if(buttomMessage == "Click To Open Movie Posters") {
+	  			$('.buttonText').text("Click To Close Movie Posters");
+	  			$('.subtitle').text("")
+	  		} else if(buttomMessage == "Click To Close Movie Posters"){
+	   			$('.buttonText').text("Click To Open Movie Posters");
+	   			$('.subtitle').text("Please Click on the Button to View the Movie Posters");
+			}
+	  	 
+
+  	var speed = 700; //speed with which the images will change once the arrows are clicked on
+  	var autoSwitch = true;
+  	var autoSwitchSpeed = 4000;
+
+   	$('.slide').first().addClass('active');
+   	$('.slide').hide();
+   	$('.active').show();
+
+   	$('.right').click(function() {
+    		$('.active').removeClass('active').addClass('oldActive');
+   			
+   			if($('.oldActive').is(':last-child')) {
+   				$('.slide').first().addClass('active');
+   				$('.slide').fadeOut(speed);
+   				$('.active').fadeIn(speed);
+   			   	$('.active').show();
+   			   	$('.oldActive').hide();
+ 
+   		} else {
+    			$('.oldActive').next().addClass('active');
+    			$('.oldActive').hide();
+    			$('.slide').fadeOut(speed);
+   				$('.active').fadeIn(speed);
+    			$('.active').show();
+   		}
+
+   		$('.oldActive').removeClass('oldActive');
+
+   	});
+
+   	$('.left').click(function() {
+    		$('.active').removeClass('active').addClass('oldActive');
+   			
+   			if($('.oldActive').is(':first-child')) {
+   				$('.slide').last().addClass('active');
+   				$('.slide').fadeOut(speed);
+   				$('.active').fadeIn(speed);
+   			   	$('.active').show();
+   			   	$('.oldActive').hide();
+ 
+   		} else {
+    			$('.oldActive').prev().addClass('active');
+    			$('.oldActive').hide();
+    			$('.slide').fadeOut(speed);
+   				$('.active').fadeIn(speed);
+    			$('.active').show();
+   		}
+
+   		$('.oldActive').removeClass('oldActive');
+
+   	});
+
+   	if(autoSwitch == true) {
+   		setInterval(function() {
+
+	$('.active').removeClass('active').addClass('oldActive');
+	   			
+	   			if($('.oldActive').is(':last-child')) {
+	   				$('.slide').first().addClass('active');
+	   				$('.slide').fadeOut(speed);
+	   				$('.active').fadeIn(speed);
+	   			   	$('.active').show();
+	   			   	$('.oldActive').hide();
+	 
+	   		} else {
+	    			$('.oldActive').next().addClass('active');
+	    			$('.oldActive').hide();
+	    			$('.slide').fadeOut(speed);
+	   				$('.active').fadeIn(speed);
+	    			$('.active').show();
+	   		}
+
+	   		$('.oldActive').removeClass('oldActive');
+   		},autoSwitchSpeed);
+   	}
+	});
+});
+</script>
+ 
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			 
+			<div class="col-lg-12">
+				<div class="jumbotron">
+					<h1 class="title">Movies Coming Soon</h1>
+					<p class="subtitle">Please Click on the Button to View the Movie Posters</p>
+				</div>
+			</div>
+		</div>
+<div id ="lowerBody">
+		<div class="row arrowsAndImages">
+			<div class="col-sm-3 leftArrow"> 
+ 				<img src="left.png" class ="left"/>
+			</div>
+
+			<div class="col-sm-6 ImageArea">
+  				<div class ="images">
+					<div class="slide"> <img src="testimg1.jpg" class="image img-rounded img-responsive"/> </div>
+					<div class="slide"> <img src="testimg2.jpg" class="image img-rounded img-responsive"/></div>
+					<div class="slide"> <img src="testimg.jpg" class="image  img-rounded img-responsive"/> </div>
+ 				</div>
+  			</div>
+
+ 			<div class="col-sm-3 rightArrow"> 
+ 				<img src="right.png" class ="right img-responsive"/>
+ 			</div>
+
+		</div>
+
+		<div class = "row buttonArea">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-6">
+				 <button type="button" class="btn-info btn-large showPics"><div class="buttonText">Click To Open Movie Posters</div></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+			
+ 
+
+
+
+</body>

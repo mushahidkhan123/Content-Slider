@@ -1,0 +1,52 @@
+ .btn-info{
+ 	height: 50px;
+    padding-left: 10px;
+  	padding-right: 10px;
+  	font-size: 17px;
+  	margin-left: 60px;
+  	border: .5px solid white;
+  	margin-bottom: 10px;
+  	margin-top: 10px;
+   }
+
+  .title{
+  	 margin-left: 300px;
+  }
+.subtitle{
+  	 margin-left: 350px;
+  }
+
+.images{
+	height:300px;
+	width: 800px;
+	overflow: hidden;
+	margin-left: -150px;
+	margin-top: -20px;
+   }
+
+ .image{
+ 	height: 300px;
+ 	width: 800px;
+ }
+
+ .left{
+ 	height: 70px;
+ 	width: 70px;
+ 	margin-top: 100px;
+ 	margin-left: 67px;
+ }
+
+ .right{
+ 	height: 70px;
+ 	width: 70px;
+ 	margin-top: 90px;
+ 	margin-left: 50px;
+ }
+
+ .arrowsAndImages{
+  	margin-left: 100px;
+ }
+
+ .left:{
+ 	margin-left: 100px;
+ }
